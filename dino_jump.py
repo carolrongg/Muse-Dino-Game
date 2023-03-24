@@ -109,12 +109,12 @@ if __name__ == "__main__":
             allValues.append(band_powers[Band.Delta])
             deltaWaves = band_powers[Band.Delta]
             print("Delta: {}".format(deltaWaves))        
-            if deltaWaves >= 1 and allValues[-2] <= 1: 
+            if deltaWaves >= 1 and allValues[-2] <= 1:
                 print("Blink!")            
                 pyautogui.press('space')
-            elif deltaWaves >= 1.7 and allValues[-2] >= 1:
+            elif deltaWaves >= 1.65 and (deltaWaves - allValues[-2]) >= 0.15: 
                 print("Blink!")            
                 pyautogui.press('space')          
                                          
-    except KeyboardInterrupt:
+    except KeyboardInterrupt:                      
         print('Closing!')                  
